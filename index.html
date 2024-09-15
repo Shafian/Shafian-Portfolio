@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">
+            <h1>Shafian Portfolio</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#resume">Resume</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home Section with Bubbles -->
+    <section id="home" class="home-section">
+        <div class="content">
+            <h2><span id="typing-effect"></span></h2>
+            <p>Bachelor's in Computer Science</p>
+        </div>
+        <div class="bubbles">
+            <!-- Clickable Bubbles -->
+            <div class="bubble clickable" data-link="#about">
+                <span>About Me</span>
+            </div>
+            <div class="bubble clickable" data-link="#resume">
+                <span>Resume</span>
+            </div>
+
+            <!-- Non-clickable Bubbles -->
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="about-section">
+        <div class="about-container">
+            <div class="about-text">
+                <h2>About Me</h2>
+                <p>
+                    Welcome to my website! My name is Al Shafian Bari, and I am passionate about software development. I have a bachelor's in 
+                   computer science from the Grove School of Engineering in the City College of New York. My favorite language is Swift and my 
+                   second is Python. I currently work as a Software Quality Assurance Automation Engineer at Apple.   
+                    </p>
+
+                <p>You can view my GitHub contributions in the last year below:</p>
+                <img src="https://ghchart.rshah.org/Shafian" alt="GitHub Contributions">
+                <p>Feel free to check out my projects or reach out to me if you'd like to collaborate!</p>
+            </div>
+            <div class="about-image">
+                <img src="l.jpg" alt="Your Picture">
+            </div>
+        </div>
+    
+        <!-- Known Languages Section -->
+        <div class="languages-container">
+            <h2>Known Languages</h2>
+            <div class="languages">
+                <div class="language-item active">Python</div>
+                <div class="language-item">Swift</div>
+                <div class="language-item">JavaScript</div>
+                <div class="language-item">HTML/CSS</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume" class="resume-section">
+        <h2>Work Experience</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Software Quality Assurance Automation Engineer</h3>
+                    <span>June 2024 - Present</span>
+                    <h4>Apple</h4>
+                    <p>Conducted comprehensive automation code testing of software applications on iOS, iPadOS, and macOS.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Specialist</h3>
+                    <span>2022 - June 2024</span>
+                    <h4>Apple</h4>
+                    <p>Supported the Apple Vision Pro Demo experience, educating customers on spatial computing.</p>
+                </div>
+            </div>
+             <!-- Job 3 -->
+             <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Tech Fellow</h3>
+                    <span>July 2023 - December 2023</span>
+                    <h4>CodePath</h4>
+                    <p>Helped 30+ college students learn how to code and provide guidance's when needed</p>
+                </div>
+            </div>
+
+            <!-- New Job 4 -->
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Hardware Engineer & Educator</h3>
+                    <span>February 2021 - August 2021</span>
+                    <h4>Self Employed</h4>
+                    <p>Learned how to build a PC computer in three weeks by viewing online tutorials that detailed how to set up the
+                        motherboard, CPU, and GPU, and cable management and wiring.</p>
+                </div>
+            </div>
+
+            <!-- New Job 5 -->
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Cashier</h3>
+                    <span>March 2017 - March 2022</span>
+                    <h4>Cinemart Cinemas</h4>
+                    <p>Provided excellent customer service; managed register at a high-volume venue, selling 500+ tickets per shift</p>
+                </div>
+            </div>
+            <!-- Add more timeline items as needed -->
+        </div>
+    </section>
+
+    <!-- Contact Me Section -->
+    <section id="contact" class="contact-section">
+        <div class="contact-container">
+            <h2>Contact Me</h2>
+            <form id="contact-form" action="https://formspree.io/f/{your-form-id}" method="POST">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        // Typing effect
+        const sentences = [
+            "Welcome to Al Shafian Bari Portfolio",
+            "I am a Software Engineer",
+            "I love to code!"
+        ];
+
+        let sentenceIndex = 0;
+        let charIndex = 0;
+
+        function typeSentence() {
+            const currentSentence = sentences[sentenceIndex];
+            if (charIndex < currentSentence.length) {
+                document.getElementById("typing-effect").innerHTML += currentSentence.charAt(charIndex);
+                charIndex++;
+                setTimeout(typeSentence, 60); // Adjust typing speed here
+            } else {
+                setTimeout(() => {
+                    deleteSentence();
+                }, 1000); // 1 second pause at the end of each sentence
+            }
+        }
+
+        function deleteSentence() {
+            const currentSentence = sentences[sentenceIndex];
+            if (charIndex > 0) {
+                document.getElementById("typing-effect").innerHTML = currentSentence.substring(0, charIndex - 1);
+                charIndex--;
+                setTimeout(deleteSentence, 30); // Adjust deleting speed here
+            } else {
+                sentenceIndex = (sentenceIndex + 1) % sentences.length;
+                setTimeout(typeSentence, 100);
+            }
+        }
+
+        window.onload = typeSentence;
+
+        // Handle bubble clicks
+        document.querySelectorAll('.clickable').forEach(bubble => {
+            bubble.addEventListener('click', function() {
+                document.querySelector(this.getAttribute('data-link')).scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Scroll through languages one at a time
+        const languages = document.querySelectorAll('.language-item');
+        let currentLanguageIndex = 0;
+
+        function showNextLanguage() {
+            languages[currentLanguageIndex].classList.remove('active');
+            currentLanguageIndex = (currentLanguageIndex + 1) % languages.length;
+            languages[currentLanguageIndex].classList.add('active');
+        }
+
+        setInterval(showNextLanguage, 3000); // Change language every 3 seconds
+
+        // Initialize first language as active
+        languages[currentLanguageIndex].classList.add('active');
+    </script>
+
+</body>
+</html>
