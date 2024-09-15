@@ -1,0 +1,423 @@
+/* Reset default styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Navigation bar styling */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 1rem;
+}
+
+.nav-links {
+    list-style: none;
+}
+
+.nav-links li {
+    display: inline;
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.nav-links a:hover {
+    color: #f4f4f4;
+    text-decoration: underline;
+}
+
+.logo h1 {
+    color: white;
+}
+
+/* Home Section styling */
+.home-section {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #282729;
+    overflow: hidden;
+}
+
+.home-section .content {
+    text-align: center;
+    z-index: 1;
+}
+
+.home-section h2 {
+    font-size: 3rem;
+    color: rgb(209, 206, 206);
+}
+
+.home-section p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-top: 1rem;
+}
+
+/* Bubble styling */
+.bubbles {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.bubble {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1) 60%, rgba(255, 255, 255, 0) 100%);
+    border: 2px solid rgb(255, 255, 255);
+    box-shadow: 0 10px 15px rgba(247, 247, 247, 0.05);
+    animation: rise 8s infinite ease-in-out;
+    opacity: 0.6;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.bubble span {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.bubble:hover {
+    transform: scale(1.1); /* Slight grow effect on hover */
+}
+
+.bubble:nth-child(1) {
+    width: 150px;
+    height: 150px;
+    left: 10%;
+    animation-duration: 10s;
+}
+
+.bubble:nth-child(2) {
+    width: 120px;
+    height: 120px;
+    left: 40%;
+    animation-duration: 8s;
+}
+
+.bubble:nth-child(3) {
+    width: 150px;
+    height: 150px;
+    right: 20%;
+    animation-duration: 9s;
+}
+
+.bubble:nth-child(4) {
+    width: 130px;
+    height: 130px;
+    right: 30%;
+    animation-duration: 11s;
+}
+
+.bubble:nth-child(5) {
+    width: 160px;
+    height: 160px;
+    left: 60%;
+    animation-duration: 12s;
+}
+
+.bubble:nth-child(6) {
+    width: 140px;
+    height: 140px;
+    right: 10%;
+    animation-duration: 10s;
+}
+
+@keyframes rise {
+    0% {
+        bottom: -100px;
+        opacity: 0.5;
+        transform: translateY(0);
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        bottom: 100vh;
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+}
+
+/* Pop animation */
+@keyframes pop {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.5);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+/* Typing effect styling */
+#typing-effect::after {
+    content: '|';
+    display: inline-block;
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Contact Section */
+.contact-section {
+    background-color: #282729;
+    padding: 50px;
+    text-align: center;
+}
+
+.contact-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.contact-container h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+button[type="submit"] {
+    background-color: #5cb85c;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+button[type="submit"]:hover {
+    background-color: #4cae4c;
+}
+
+/* About Me Section */
+.about-section {
+    padding: 4rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+}
+
+.about-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    padding: 0 20px;
+    width: 100%;
+}
+
+.about-text {
+    width: 60%;
+}
+
+.about-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.about-text p {
+    font-size: 1.2rem;
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+/* Image styling */
+.about-image {
+    width: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-image img {
+    width: 300px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Resume Section */
+.resume-section {
+    padding: 4rem 0;
+    background-color: #fff;
+    width: 100%;
+}
+
+.resume-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #333;
+    text-align: center;
+}
+
+/* Timeline styling */
+.timeline {
+    position: relative;
+    margin: 0 auto;
+    padding: 0;
+    max-width: 900px;
+}
+
+.timeline-item {
+    position: relative;
+    margin: 2rem 0;
+    padding-left: 40px;
+    border-left: 2px solid #ff6f61;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #ff6f61;
+}
+
+.timeline-content h3 {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.timeline-content h4 {
+    font-size: 1.2rem;
+    color: #ff6f61;
+    margin-top: 0.5rem;
+}
+
+.timeline-content span {
+    font-size: 1rem;
+    color: #666;
+    margin-top: 0.3rem;
+    display: block;
+}
+
+.timeline-content p {
+    margin-top: 0.5rem;
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Add styling for mobile responsiveness */
+@media (max-width: 768px) {
+    .timeline {
+        padding: 0 20px;
+    }
+    
+    .timeline-item {
+        padding-left: 30px;
+    }
+
+    .timeline-item::before {
+        left: -15px;
+        width: 30px;
+        height: 30px;
+    }
+}
+
+/* Known Languages Section */
+.languages-container {
+    text-align: center;
+    padding: 4rem 0;
+    background-color: white;
+    color: #282729;
+}
+
+.languages-container h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.languages {
+    font-size: 2rem;
+    height: 50px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.language-item {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.language-item.active {
+    opacity: 1;
+}
